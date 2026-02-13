@@ -1,10 +1,9 @@
 fastapi
-uvicorn
+uvicorn[standard]
 pinecone
 google-genai
-python-multipart
+python-dotenv
 PyPDF2
 python-docx
-pydantic
-dotenv
-sentence_transformers
+sentence-transformers
+torch

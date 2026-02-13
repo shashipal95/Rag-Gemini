@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_URL = "http://localhost:8000"
+API_URL = "http://localhost:10000"
 
 st.set_page_config(
     page_title="Gemini RAG Document Assistant",

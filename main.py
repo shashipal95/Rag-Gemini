@@ -49,7 +49,7 @@ pc = Pinecone(api_key=PINECONE_API_KEY)
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 # Initialize embedding model
-embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+embedding_model = SentenceTransformer("all-MiniLM-L6-v2", device="cpu")
 
 # Create or connect to index
 def setup_index():
@@ -334,4 +334,6 @@ async def get_stats():
         raise HTTPException(status_code=500, detail=f"Error getting stats: {str(e)}")
 
 if __name__ == "__main__":
+    import uvicorn
+    import os
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
