@@ -15,6 +15,7 @@ import docx
 import io
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
+import uvicorn
 
 # Load environment variables from .env file
 load_dotenv()
@@ -333,5 +334,4 @@ async def get_stats():
         raise HTTPException(status_code=500, detail=f"Error getting stats: {str(e)}")
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
