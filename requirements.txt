@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pinecone
+google-genai
+python-multipart
+PyPDF2
+python-docx
+pydantic
+dotenv
+sentence_transformers
